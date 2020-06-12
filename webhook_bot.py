@@ -10,7 +10,7 @@ logging.basicConfig(format='%(asctime)s - (%name)s - (%levelname)s - (%message)s
 # Logger Object
 logger = logging.getLogger(__name__)
 
-TOKEN = "1220553394:AAEJs75dVdwLS9JcDGrp88DNy_tybxylObM"
+TOKEN = "12*********************************bM"
 
 
 app = Flask(__name__)
@@ -70,7 +70,7 @@ def error(bot,update):
 bot = Bot(TOKEN)
 
 try:
-    bot.set_webhook("https://sleepy-ocean-63050.herokuapp.com/" + TOKEN)
+    bot.set_webhook("https***************************herokuapp.com/" + TOKEN)
 except Exception as e:
     print(e)
 
