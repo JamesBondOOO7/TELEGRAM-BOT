@@ -1,0 +1,110 @@
+Download Telegram
+
+Name of the bot : Jarvis
+Username of the bot : JamesOO7
+
+Creating a Python Virtual Environment :
+In cmd :  python3 -m venv MyVirEnv
+(where MyVirEnv is the name of the Environment)
+
+Ques What is Python Virtual Environment ?
+Ans  A Virtual Environment is a tool that helps to keep dependencies required by different
+projects separate by creating isolated Python Virtual Environments for them.
+- We can keep any version of our 3rd party library.
+
+Activating the virtual Environment
+In cmd : MyVirEnv\Scripts\activate
+
+****************************************************************************************************************
+POLLING PROGRAM
+
+
+Polling program interacts with the TELEGRAM server for the user to say some message.
+It will periodically ask the server for any new messages.
+
+In case the user sends a message, the Polling Program will send the response to the Telegram Server.
+Then, the Telegram server will convey the message to the user.
+
+Step 1: Enable Logging for any kind of warnings or error messages
+
+Step 2: Creating a main function and retrieving our TOKEN (API Key)
+
+Step 3: Create an UPDATER
+      :: It will receive the updates from telegram and deliver it to the DISPATCHER
+         Dispatcher handles the updates.
+
+Step 4: Create a Dispatcher Object
+
+In telegram : If we start a text with "/" then it is treated as a command
+
+Step 5: Create a start function ( takes in bot object and the update)
+
+Step 6: Create a help function
+
+Step 7: Create a echo_text function
+      :: In this case we are sending the same TEXT message back
+
+Step 8: Create a echo_sticker function
+      :: In this case we are sending the same sticker message back
+
+NOTE : These functions are handling the messages given by the user
+
+For different functionalities achieved, refer this :
+https://python-telegram-bot.readthedocs.io/en/stable/
+
+Step 9: Create the error function
+
+To stop polling : Ctrl + C
+
+NOTE : The polling program is resource intensive as at each second, our program is requesting the Server
+       to check for the response.
+
+****************************************************************************************************************
+WEBHOOK PROGRAM (AN ALTERNATIVE FOR POLLING PROGRAM)
+
+Instead of constantly checking for messages, we will give the url of our webhook program to the telegram
+server.
+Therefore, when the user sends a message to the bot, the telegram server will notify us (through callback url).
+And then our webhook program(which is sitting idle) will reply accordingly.
+
+NOTE : The changes are made in the polling program !!
+
+Step 1: Create a server
+
+A server is program/application which runs infinitely and responds to the requests from the telegram server
+
+Step 2: Install Flask and import it
+
+Step 3: Create an app object
+
+Step 4: Create some endpoint to receive some requests i.e. index() function
+
+Step 5: Create a webhook object to receive updates from telegram (in json)
+        Therefore, we will convert the json object to update object of the telegram module
+
+Step 6: Create a Bot object and  a Dispatcher of it
+
+Step 7: Set a webhook url ( and not a local host !!)
+
+Step 8: ngrok ; make an account and they will provide a url.
+        Now we need to add this url into our project.
+
+Step 9: Designate a port to this bot (In our case it's 8443)
+
+NOTE : This url is actually our callback url which tells the Telegram server to set up our webhook.
+      And on this url, we will receive the requests and other stuff !!
+
+Now we are making the bot smart !!
+
+We will use Google's Dialog service to help us in this case.
+****************************************************************************************************************
+
+Now what after all this ?
+
+We are designing our bot for NEWS and Small talk only.
+
+We will use the gnews api to call/get news and we will provide the news links to the user who is interacting
+
+****************************************************************************************************************
+
+Once, this is done, we will upload our project on a cloud platform for 24/7 working !!
